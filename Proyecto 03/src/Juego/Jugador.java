@@ -3,27 +3,36 @@ package Juego;
 public class Jugador {
    // PROPIEDADES O ATRIBUTOS
 	protected String nombre;
-	protected String apellido1;
-	protected String apellido2;
+	protected String apellidos;
 	protected String pais;
 	protected int edad;
 	protected int id;
 	
+	//CONSTRUCTORES
+	public Jugador(){
+		this.nombre = "player1";
+		this.apellidos = "";
+		this.pais = "";
+		this.edad = 0;
+		this.id = 0;
+	}
+	public Jugador(String nombre, String apellidos, String pais, int edad, int id){
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.pais = pais;
+		this.edad = edad;
+		this.id = id;
+	}
    // METODOS
 	public String getNombre(){
 		return nombre;}
 	public void setNombre (String nombre){
 		this.nombre = nombre;}
 	
-	public String getApellido1(){
-		return apellido1;}
-	public void setApellido1 (String apellido1){
-		this.apellido1 = apellido1;}
-	
-	public String getApellido2(){
-		return apellido2;}
-	public void setApellido2 (String apellido2){
-		this.apellido2 = apellido2;}
+	public String getApellidos(){
+		return apellidos;}
+	public void setApellidos (String apellidos){
+		this.apellidos = apellidos;}
 	
 	public String getPais(){
 		return pais;}
@@ -39,17 +48,28 @@ public class Jugador {
 		return id;}
 	public void setID(int id){
 		this.id = id;}
+
+//MÉTODO DE COMPROBAR SI LA CADENA ES UN CONJUNTO DE ESPACIOS
+
+public boolean SonEspacios(String cad)
+{
+	for(int i =0; i<cad.length(); i++)
+		if(cad.charAt(i) != ' ')
+			return false;
+	return false;
+}
+
+
+public String toString() {
+	return this.nombre+" "+this.apellidos+" con ID "+this.id+" de "+this.edad+" años";
+   }
+}
 	
-	//	CONSTRUCTOR
-	public Jugador(){
-		
-	}
 	
-	public String toString(){
-		return this.nombre+"  "+this.apellido1+"  "+this.apellido2+"  "+this.edad+"  "+this.id;
-	}
+
+	
 		
-	}
+	
 	
 
 
